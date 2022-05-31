@@ -1,0 +1,7 @@
+[alias]
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    qa = commit --amend --no-edit
+    qaa = commit --amend --no-edit -a
+    stat = status
