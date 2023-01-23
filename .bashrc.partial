@@ -10,3 +10,13 @@ up() {
 src() {
     cd "$CODESPACE_VSCODE_FOLDER"
 }
+
+gg () 
+{ 
+    git grep -nF "$@"
+}
+
+ggi () 
+{ 
+    git grep -nFi "$@"
+}
