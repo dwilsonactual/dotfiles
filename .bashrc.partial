@@ -20,3 +20,5 @@ ggi ()
 { 
     git grep -nFi "$@"
 }
+
+alias taf='TEST_ALL_FEATURES=1 rails test'
