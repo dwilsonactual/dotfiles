@@ -11,14 +11,25 @@ src() {
     cd "$CODESPACE_VSCODE_FOLDER"
 }
 
-gg () 
-{ 
+# git grep
+gg () { 
     git grep -nF "$@"
 }
 
+# git grep (case insensitive)
 ggi () 
 { 
     git grep -nFi "$@"
+}
+
+# enable feature flag
+eff () {
+    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" enable "$@"
+}
+
+# disable feature flag
+dff () {
+    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" disable "$@"
 }
 
 alias taf='TEST_ALL_FEATURES=1 rails test'
