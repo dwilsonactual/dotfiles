@@ -22,14 +22,24 @@ ggi ()
     git grep -nFi "$@"
 }
 
-# enable feature flag
+# enable feature flags
 eff () {
-    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" enable "$@"
+    local args=()
+    for var in "${@:2}"
+    do
+        args+=(-F "$var")
+    done
+    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" enable "$1" "${args[@]}"
 }
 
-# disable feature flag
+# disable feature flags
 dff () {
-    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" disable "$@"
+    local args=()
+    for var in "${@:2}"
+    do
+        args+=(-F "$var")
+    done
+    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" disable "$1" "${args[@]}"
 }
 
 alias taf='TEST_ALL_FEATURES=1 rails test'
