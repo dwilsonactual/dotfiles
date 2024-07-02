@@ -43,3 +43,10 @@ dff () {
 }
 
 alias taf='TEST_ALL_FEATURES=1 rails test'
+
+# preserve bash history
+export HISTFILE=/workspaces/.codespaces/.persistedshare/.bash_history\
+export PROMPT_COMMAND="history -a"
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+export HISTCONTROL=ignoreboth
