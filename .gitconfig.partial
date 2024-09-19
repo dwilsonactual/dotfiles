@@ -5,3 +5,5 @@
     qa = commit --amend --no-edit
     qaa = commit --amend --no-edit -a
     stat = status
+[merge]
+    stat = no
