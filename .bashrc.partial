@@ -8,7 +8,7 @@ up() {
 }
 
 src() {
-    cd "$CODESPACE_VSCODE_FOLDER"
+    cd "/workspaces/$RepositoryName"
 }
 
 # git grep
@@ -29,7 +29,7 @@ eff () {
     do
         args+=(-F "$var")
     done
-    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" enable "$1" "${args[@]}"
+    "/workspaces/$RepositoryName/bin/toggle-feature-flag" enable "$1" "${args[@]}"
 }
 
 # disable feature flags
@@ -39,7 +39,7 @@ dff () {
     do
         args+=(-F "$var")
     done
-    "$CODESPACE_VSCODE_FOLDER/bin/toggle-feature-flag" disable "$1" "${args[@]}"
+    "/workspaces/$RepositoryName/bin/toggle-feature-flag" disable "$1" "${args[@]}"
 }
 
 alias taf='TEST_ALL_FEATURES=1 rails test'
